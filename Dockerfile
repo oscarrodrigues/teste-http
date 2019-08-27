@@ -1,10 +1,10 @@
 FROM httpd
 
-ENV WORDKDIR="/var/www/html"
+ENV WORKDIR="/var/www/html"
 
 LABEL description="Webserver"
 
-WORDKDIR $WORDKDIR
+WORKDIR $WORKDIR
 
 ADD index.html WORKDIR=$WORKDIR
 
