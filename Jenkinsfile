@@ -31,5 +31,16 @@ pipeline {
         sh "docker image rm -f $registry:$BUILD_NUMBER"
       }
     }
+    stage('approval (production)') {
+      steps{
+        input message: 'Aprovar para ambiente de Produção?',
+        id: 'approval'
+      }
+    }
+    stage('Deploy no ambiente de Produção') {
+      steps{
+        sh "echo 'Deploy ambiente de Produção'"
+      }
+    }
   }
 }
